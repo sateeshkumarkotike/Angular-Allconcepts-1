@@ -1,0 +1,16 @@
+<p>products works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" [routerLink]="['ios']" routerLinkActive="active" >IOS</li>
+                <li class="list-group-item" routerLink="apple" routerLinkActive="active">Apple</li>
+                <li class="list-group-item" [routerLink]="['samsung']" routerLinkActive="active" >Samsung</li>
+              </ul>
+        </div>
+        <div class="col-md-6">
+             <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto py-5">
+            <form [formGroup]="fromGroup">
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" class="form-control" id="inputEmail4" formControlName="userName" placeholder="Email">
+                    <div *ngIf="fromGroup.get('userName').errors?.required && fromGroup.get('userName')?.touched">
+                        <small>name required</small>
+                    </div>
+                     <div *ngIf="fromGroup.get('userName').errors?.minlength && fromGroup.get('userName')?.touched">
+                        <small>name minlenght 4</small>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="inputPassword4">userEmail</label>
+                    <input type="text" class="form-control" id="inputPassword4" formControlName="userEmail" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">UserAddress</label>
+                  <input type="text" class="form-control" id="inputAddress" formControlName="UserAddress" placeholder="1234 Main St">
+                </div>
+                <div formGroupName="Address">
+                <div class="form-group">
+                    <label for="inputAddress">Address1</label>
+                    <input type="text" class="form-control" id="inputAddress" formControlName="Address1" placeholder="1234 Main St">
+                  </div>
+                  <div class="form-group">
+                  <label for="inputAddress">Address2</label>
+                  <input type="text" class="form-control" id="inputAddress" formControlName="Address2" placeholder="1234 Main St">
+                </div>
+               </div>
+                <!-- <div class="form-group">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div> -->
+                <!-- <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div> -->
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </form>
+              {{ fromGroup.value | json}}
+        </div>
+       
+    </div>
+</div>
+
